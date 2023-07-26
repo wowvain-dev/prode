@@ -8,6 +8,7 @@ import History from './pages/history/history.jsx';
 import Guides from './pages/guides/guides.jsx';
 import Layout from "./pages/layout.jsx";
 import {ChakraProvider, extendTheme} from "@chakra-ui/react";
+import RopeGuides from "./pages/guides/ropes/rope_guides.jsx";
 
 const router = createBrowserRouter([
     {
@@ -20,8 +21,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'history',
-                element: <History />,
                 children: [
+                    {
+                        index: true,
+                        element: <History />
+                    },
                     {
                         path: 'shoelace'
                     }, {
@@ -33,14 +37,20 @@ const router = createBrowserRouter([
             },
             {
                 path: 'guides',
-                element: <Guides />,
                 children: [
                     {
+                        index: true,
+                        element: <Guides />
+                    },
+                    {
                         path: 'shoelace',
+                        element: <RopeGuides />
                     }, {
                         path: 'rope',
+                        element: <RopeGuides />
                     }, {
-                        path: 'necktie'
+                        path: 'necktie',
+                        element: <RopeGuides />
                     }
                 ]
             }

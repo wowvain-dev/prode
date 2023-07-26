@@ -1,19 +1,18 @@
-import {ButtonGroup, Image, Text, Button, Divider} from "@chakra-ui/react";
+import {Image, Text, Button, Divider} from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
 
 export default function Index() {
     const navigate = useNavigate();
     return (
         <div
-            style={{backgroundImage: "url('/background_artwork.png')",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: 'center',
-            }}
+            // style={{backgroundImage: "url('/background_artwork.png')",
+            //     backgroundSize: "cover",
+            //     backgroundRepeat: "no-repeat",
+            //     backgroundPosition: 'center',
+            // }}
         >
 
-        <div className="h-[92vh] md:h-[92vh] flex flex-col md:flex-row md:w-full md:justify-center md:items-center container mx-auto py-10"
-        >
+        <div className="h-[92vh] md:h-[92vh] flex flex-col md:flex-row md:w-full md:justify-center md:items-center container mx-auto py-10">
             <div className="hidden md:flex md:flex-1 md:flex-col md:justify-center md:items-center">
                 <Text fontSize={["xl", "4xl", "5xl"]} fontFamily="Porpora">Do your knots look like your cable management?</Text>
                 <Divider borderColor={"gray.400"} />
@@ -27,11 +26,11 @@ export default function Index() {
                 </div>
             </div>
             <div className="md:hidden flex flex-1 justify-end items-end mx-10">
-                <Image w={700} src="/index_artwork.png"/>
+                <Image w={800} src="/index_artwork.png"/>
             </div>
             <div className="h-10 md:w-10" />
             <div className="hidden md:flex-1 md:flex md:justify-center md:items-center">
-                <Image w={700} src="/index_artwork.png"/>
+                <Image w={800} src="/index_artwork.png"/>
             </div>
             <div className="flex flex-col flex-1 justify-start items-center md:hidden mx-10">
                 <Text fontSize={["3xl", "4xl", "5xl"]} fontFamily="Porpora" textAlign="center">Do your knots look like your cable management?</Text>
