@@ -21,9 +21,9 @@ export default function Layout() {
                         <Button onClick={() => navigate('/')}
                             colorScheme="blue" variant={location.pathname === "/" ? "outline" : "ghost"}>Home</Button>
                         <Button onClick={() => navigate('/guides')}
-                            colorScheme="blue" variant={location.pathname === "/guides" ? "outline" : "ghost"}>Guides</Button>
+                            colorScheme="blue" variant={location.pathname.includes("/guides") ? "outline" : "ghost"}>Guides</Button>
                         <Button onClick={() => navigate('/history')}
-                            colorScheme="blue" variant={location.pathname === "/history" ? "outline" : "ghost"}>History</Button>
+                            colorScheme="blue" variant={location.pathname.includes("/history") ? "outline" : "ghost"}>History</Button>
                     </ButtonGroup>
                 </div>
                 <div className="w-[150px]">

@@ -3,9 +3,17 @@ import {useNavigate} from "react-router-dom";
 
 export default function Index() {
     const navigate = useNavigate();
-
     return (
-        <div className="h-[92vh] md:h-[92vh] flex flex-col md:flex-row md:w-full md:justify-center md:items-center container mx-auto py-10">
+        <div
+            style={{backgroundImage: "url('/background_artwork.png')",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: 'center',
+            }}
+        >
+
+        <div className="h-[92vh] md:h-[92vh] flex flex-col md:flex-row md:w-full md:justify-center md:items-center container mx-auto py-10"
+        >
             <div className="hidden md:flex md:flex-1 md:flex-col md:justify-center md:items-center">
                 <Text fontSize={["xl", "4xl", "5xl"]} fontFamily="Porpora">Do your knots look like your cable management?</Text>
                 <Divider borderColor={"gray.400"} />
@@ -19,13 +27,11 @@ export default function Index() {
                 </div>
             </div>
             <div className="md:hidden flex flex-1 justify-end items-end mx-10">
-                <Image w={600}
-                       src="https://producelikeapro.com/blog/wp-content/uploads/2022/05/7-Studio-Cable-Management-Ideas-That-Will-Quickly-Organize-Your-Space.jpg" />
+                <Image w={700} src="/index_artwork.png"/>
             </div>
             <div className="h-10 md:w-10" />
             <div className="hidden md:flex-1 md:flex md:justify-center md:items-center">
-                <Image w={600}
-                       src="https://producelikeapro.com/blog/wp-content/uploads/2022/05/7-Studio-Cable-Management-Ideas-That-Will-Quickly-Organize-Your-Space.jpg" />
+                <Image w={700} src="/index_artwork.png"/>
             </div>
             <div className="flex flex-col flex-1 justify-start items-center md:hidden mx-10">
                 <Text fontSize={["3xl", "4xl", "5xl"]} fontFamily="Porpora" textAlign="center">Do your knots look like your cable management?</Text>
@@ -40,5 +46,6 @@ export default function Index() {
                 </div>
             </div>
         </div>
+    </div>
     );
 }
