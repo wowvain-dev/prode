@@ -23,7 +23,7 @@ const router = createBrowserRouter([
                 element: <History />,
                 children: [
                     {
-                        path: 'shoe'
+                        path: 'shoelace'
                     }, {
                         path: 'rope'
                     }, {
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
                 element: <Guides />,
                 children: [
                     {
-                        path: 'shoe',
+                        path: 'shoelace',
                     }, {
                         path: 'rope',
                     }, {
