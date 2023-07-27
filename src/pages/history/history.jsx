@@ -14,8 +14,8 @@ import {
 export default function History() {
     const navigate = useNavigate();
 
-    return (<div className="min-h-[92vh] flex flex-col container mx-auto py-10 md:pb-40">
-        <Breadcrumb textColor={"gray"} className="ml-10">
+    return (<div className="pt-[10vh] min-h-[92vh] flex flex-col container mx-auto py-10 md:pb-40">
+        <Breadcrumb textColor={"gray"} className="ml-10 sm:ml-0">
             <BreadcrumbItem>
                 <BreadcrumbLink onClick={() => navigate('/')}>Home</BreadcrumbLink>
             </BreadcrumbItem>
@@ -32,7 +32,7 @@ export default function History() {
                   gap={10}>
                 <GridItem w='350px'>
                     <Card className="transition hover:scale-105"
-                          onClick={() => navigate('/guides/rope')}
+                          onClick={() => navigate('/history/rope')}
                     >
                         <CardHeader>
                             <Text fontSize="3xl">Rope Knots</Text>
@@ -46,7 +46,7 @@ export default function History() {
                 </GridItem>
                 <GridItem w='350px'>
                     <Card className="transition hover:scale-105"
-                          onClick={() => navigate('/guides/shoelace')}
+                          onClick={() => navigate('/history/shoelace')}
                     >
                         <CardHeader>
                             <Text fontSize="3xl">Shoelace Knots</Text></CardHeader>
@@ -58,7 +58,7 @@ export default function History() {
                 </GridItem>
                 <GridItem w='350px'>
                     <Card className="transition hover:scale-105"
-                          onClick={() => navigate('/guides/necktie')}
+                          onClick={() => navigate('/history/necktie')}
                     >
                         <CardHeader>
                             <Text fontSize="3xl">Necktie Knots</Text>

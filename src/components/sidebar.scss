@@ -1,0 +1,49 @@
+.content {
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 28px;
+  }
+  h5 {
+    font-size: 24px;
+  }
+  h6 {
+    font-size: 20px;
+  }
+
+  * {
+    all:revert;
+    font-family: Porpora, sans-serif !important;
+  }
+
+  code {
+    background-color: #ddd;
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-family: monospace !important;
+  }
+
+  blockquote {
+    background-color: #ddd;
+    border-radius: 8px;
+    padding: 7px 10px;
+  }
+
+  blockquote:before {
+    content: "|";
+    color: #aaa
+  }
+
+  //table, th, td {
+  //  border: 1px solid;
+  //}
+}
