@@ -28,8 +28,13 @@ export default function AddNewGuide() {
     const navigate = useNavigate();
     const [messageApi, contextHolder] = message.useMessage();
 
+
+
     const success = () => {
         messageApi.open({
+            style: {
+                marginTop: "10vh"
+            },
             type: 'success',
             content: 'Guide saved succesfully!',
             duration: 1
@@ -38,6 +43,9 @@ export default function AddNewGuide() {
 
     const errorValdiation = () => {
         messageApi.open({
+            style: {
+                marginTop: "10vh"
+            },
             type: 'error',
             content: 'All fields are required',
             duration: 2
@@ -46,6 +54,9 @@ export default function AddNewGuide() {
 
     const errorSaving = () => {
         messageApi.open({
+            style: {
+                marginTop: "10vh"
+            },
             type: 'error',
             content: 'There was an API error when saving',
             duration: 2
@@ -54,7 +65,7 @@ export default function AddNewGuide() {
 
     const [editorVal, setEditorVal] = useState('');
     const [titleVal, setTitleVal] = useState('');
-    const [selection, setSelection] = useState(0);
+    const [selection, setSelection] = useState(null);
     const [slateContent, setSlateContent] = useState(null);
     const [postID, setPostID] = useState(null);
     // eslint-disable-next-line no-unused-vars
@@ -129,6 +140,9 @@ export default function AddNewGuide() {
     const validateForm = () => {
         if (titleVal === '') {
             messageApi.open({
+                style: {
+                    marginTop: "10vh"
+                },
                 type: 'loading',
                 content: "Saving...",
                 duration: .5
@@ -141,6 +155,9 @@ export default function AddNewGuide() {
 
         if (selection === null) {
             messageApi.open({
+                style: {
+                    marginTop: "10vh"
+                },
                 type: 'loading',
                 content: "Saving...",
                 duration: .5
@@ -152,6 +169,9 @@ export default function AddNewGuide() {
 
         if (editorVal === '') {
             messageApi.open({
+                style: {
+                    marginTop: "10vh"
+                },
                 type: 'loading',
                 content: "Saving...",
                 duration: .5
@@ -163,6 +183,9 @@ export default function AddNewGuide() {
 
         if (selection === 0) {
             messageApi.open({
+                style: {
+                    marginTop: "10vh"
+                },
                 type: 'loading',
                 content: "Saving...",
                 duration: .5});
@@ -175,6 +198,9 @@ export default function AddNewGuide() {
             });
         } else if (selection === 1) {
             messageApi.open({
+                style: {
+                    marginTop: "10vh"
+                },
                 type: 'loading',
                 content: "Saving...",
                 duration: .5});
@@ -187,6 +213,9 @@ export default function AddNewGuide() {
             });
         } else if (selection === 2) {
             messageApi.open({
+                style: {
+                    marginTop: "10vh"
+                },
                 type: 'loading',
                 content: "Saving...",
                 duration: .5});
@@ -213,7 +242,9 @@ export default function AddNewGuide() {
         {/*    <AlertIcon />*/}
         {/*    All fields are required!*/}
         {/*</Alert>*/}
-        {contextHolder}
+        <div className="pt-[10vh]">
+            {contextHolder}
+        </div>
 
         <Text textAlign="center"
             fontSize="5xl" mb={10}
@@ -239,7 +270,7 @@ export default function AddNewGuide() {
                         setSelection(0);
                     }}
                     colorScheme={"blue"}
-                    variant={selection === 0 ? "solid" : "ghost"}
+                    variant={selection === 0 ? "solid" : "outline"}
                 >Rope</Button>
                 <Button
                     onClick={() => {
@@ -250,7 +281,7 @@ export default function AddNewGuide() {
                         setSelection(1);
                     }}
                     colorScheme={"blue"}
-                    variant={selection === 1 ? "solid" : "ghost"}
+                    variant={selection === 1 ? "solid" : "outline"}
                 >Necktie</Button>
                 <Button
                     onClick={() => {
@@ -261,13 +292,33 @@ export default function AddNewGuide() {
                         setSelection(2);
                     }}
                     colorScheme={"blue"}
-                    variant={selection === 2 ? "solid" : "ghost"}
+                    variant={selection === 2 ? "solid" : "outline"}
                 >Shoelace</Button>
             </Grid>
             <FormHelperText>REQUIRED</FormHelperText>
             <Spacer h={20}/>
             <FormLabel fontSize={'2xl'}>Guide contents:</FormLabel>
-            <ReactQuill theme="snow" value={editorVal} onChange={setEditorVal} />
+            <ReactQuill theme="snow"
+                        value={editorVal} onChange={setEditorVal}
+                        modules={{
+                            toolbar: [
+                                [{'header': [1, 2, 3, false]}],
+                                ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                                [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+                                [{'color':[]}, {'background':[]}],
+                                ['link', 'image'],
+                                ['align'],
+                                ['clean'],
+                            ]
+                        }}
+
+                        formats={[
+                            'header',
+                            'bold', 'italic', 'underline', 'strike', 'blockquote',
+                            'list', 'bullet', 'indent',
+                            'link', 'image', 'color', 'background', 'align'
+                        ]}
+            />
             <FormHelperText>REQUIRED</FormHelperText>
 
             <Spacer h={30}/>

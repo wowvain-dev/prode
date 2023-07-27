@@ -18,17 +18,20 @@ export default function Sidebar({items, title, children}) {
 
     return <Box minH="80vh" bg={"white"}>
         <SidebarContent items={items} title={title} onClose={() => onClose} display={{base: 'none', md: 'block'}}/>
-        <Drawer
-            isOpen={isOpen}
-            placement="left"
-            onClose={onClose}
-            returnFocusOnClose={false}
-            onOverlayClick={onClose}
-            size={"full"}>
-            <DrawerContent>
-                <SidebarContent items={items} onClose={onClose} title={title}/>
-            </DrawerContent>
-        </Drawer>
+            <Drawer
+                isOpen={isOpen}
+                placement="left"
+                onClose={onClose}
+                returnFocusOnClose={false}
+                onOverlayClick={onClose}
+                size={"full"}
+            >
+                <DrawerContent style={{
+                    marginTop: '10vh'
+                }}>
+                    <SidebarContent items={items} onClose={onClose} title={title}/>
+                </DrawerContent>
+            </Drawer>
 
         <MobileNav display={{base: 'flex', md: 'none'}} onOpen={onOpen} items={items} title={title}/>
 
@@ -61,7 +64,7 @@ const SidebarContent = ({items, title, onClose, ...rest}) => {
             {items.map((link) => (
                 <div key={link.name} className={"my-2"}>
                     <NavItem icon={link.icon} link={link.link}>
-                        {link.name}
+                        <Text textOverflow="ellipsis">{link.name}</Text>
                     </NavItem>
                 </div>
             ))}
