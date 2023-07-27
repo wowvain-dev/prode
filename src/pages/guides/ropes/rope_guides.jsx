@@ -18,7 +18,7 @@ export default function RopeGuides() {
     );
 
     if (loading) {
-        return <div className="min-h-[92vh] md:h-[92vh] flex flex-col container mx-auto py-10">
+        return <div className="min-h-[92vh] md:h-[92vh] flex flex-col container mx-auto mt-[8vh] py-10">
                 <Breadcrumb textColor={"gray"} className="ml-10 sm:ml-0">
                     <BreadcrumbItem>
                         <BreadcrumbLink onClick={() => navigate('/')}>Home</BreadcrumbLink>
@@ -35,7 +35,7 @@ export default function RopeGuides() {
     }
 
     if (error) {
-        return <div className="min-h-[92vh] md:h-[92vh] flex flex-col container mx-auto py-10">
+        return <div className="min-h-[92vh] md:h-[92vh] flex flex-col container mx-auto mt-[8vh] py-10">
             <Breadcrumb textColor={"gray"} className="ml-10 sm:ml-0">
                 <BreadcrumbItem>
                     <BreadcrumbLink onClick={() => navigate('/')}>Home</BreadcrumbLink>
@@ -65,7 +65,7 @@ export default function RopeGuides() {
     });
 
     return(
-        <div className="min-h-[92vh] md:h-[92vh] flex flex-col container mx-auto py-10">
+        <div className="min-h-[92vh] md:h-[92vh] flex flex-col container mx-auto pt-[10vh] py-10">
             <Breadcrumb textColor={"gray"} className="ml-10 sm:ml-0">
                 <BreadcrumbItem>
                     <BreadcrumbLink onClick={() => navigate('/')}>Home</BreadcrumbLink>

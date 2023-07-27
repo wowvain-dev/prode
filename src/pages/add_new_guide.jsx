@@ -2,7 +2,7 @@ import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 import {message} from "antd";
 import {
-    Alert, AlertIcon,
+    Alert, AlertIcon, Breadcrumb, BreadcrumbItem, BreadcrumbLink,
     Button,
     ButtonGroup,
     FormControl,
@@ -22,8 +22,10 @@ import {
     PUBLISH_ROPE_GUIDE, PUBLISH_SHOELACE_GUIDE
 } from "../utilities/queries.js";
 import htmlToSlateAST from "@graphcms/html-to-slate-ast";
+import {useNavigate} from "react-router-dom";
 
 export default function AddNewGuide() {
+    const navigate = useNavigate();
     const [messageApi, contextHolder] = message.useMessage();
 
     const success = () => {
@@ -198,7 +200,15 @@ export default function AddNewGuide() {
         }
     }
 
-    return <div className="flex flex-col container px-10 mx-auto py-10">
+    return <div className="pt-[10vh] flex flex-col container px-10 mx-auto py-10">
+        <Breadcrumb textColor={"gray"} className="ml-10 sm:ml-0">
+            <BreadcrumbItem>
+                <BreadcrumbLink onClick={() => navigate('/')}>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+                <BreadcrumbLink onClick={() => navigate('/new')}>Add New Guide</BreadcrumbLink>
+            </BreadcrumbItem>
+        </Breadcrumb>
         {/*<Alert status="error" className="transition">*/}
         {/*    <AlertIcon />*/}
         {/*    All fields are required!*/}

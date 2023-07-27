@@ -4,15 +4,8 @@ import {useNavigate} from "react-router-dom";
 export default function Index() {
     const navigate = useNavigate();
     return (
-        <div
-            // style={{backgroundImage: "url('/background_artwork.png')",
-            //     backgroundSize: "cover",
-            //     backgroundRepeat: "no-repeat",
-            //     backgroundPosition: 'center',
-            // }}
-        >
-
-        <div className="h-[92vh] md:h-[92vh] flex flex-col md:flex-row md:w-full md:justify-center md:items-center container mx-auto py-10">
+        <div>
+        <div className="pt-[8vh] h-[92vh] md:h-[92vh] flex flex-col md:flex-row md:w-full md:justify-center md:items-center container mx-auto py-10">
             <div className="hidden md:flex md:flex-1 md:flex-col md:justify-center md:items-center">
                 <Text fontSize={["xl", "4xl", "5xl"]} fontFamily="Porpora">Do your knots look like your cable management?</Text>
                 <Divider borderColor={"gray.400"} />

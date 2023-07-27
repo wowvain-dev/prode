@@ -1,3 +1,4 @@
+import './sidebar.scss';
 import {
     Text,
     Drawer,
@@ -15,7 +16,7 @@ import {useNavigate} from "react-router-dom";
 export default function Sidebar({items, title, children}) {
     const {isOpen, onOpen, onClose} = useDisclosure();
 
-    return <Box minH="80vh" bg={"gray.100"}>
+    return <Box minH="80vh" bg={"white"}>
         <SidebarContent items={items} title={title} onClose={() => onClose} display={{base: 'none', md: 'block'}}/>
         <Drawer
             isOpen={isOpen}
@@ -31,7 +32,8 @@ export default function Sidebar({items, title, children}) {
 
         <MobileNav display={{base: 'flex', md: 'none'}} onOpen={onOpen} items={items} title={title}/>
 
-        <Box
+        <Box className="content" overflow={"scroll"}
+             bg={"gray.50"} minH="80vh"
             ml={{base: 0, md: 60}} p="4">
             {children}
         </Box>

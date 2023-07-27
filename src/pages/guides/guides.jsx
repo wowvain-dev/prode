@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 export default function Guides() {
     const navigate = useNavigate();
 
-    return (<div className="min-h-[92vh] flex flex-col container mx-auto py-10 md:pb-40">
+    return (<div className="pt-[10vh] min-h-[92vh] flex flex-col container mx-auto py-10 md:pb-40">
         <Breadcrumb textColor={"gray"} className="ml-10 sm:ml-0">
             <BreadcrumbItem>
                 <BreadcrumbLink onClick={() => navigate('/')}>Home</BreadcrumbLink>
