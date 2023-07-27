@@ -1,6 +1,8 @@
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import {InfoOutlineIcon} from "@chakra-ui/icons";
-import {Button, ButtonGroup, Icon, Spacer, Text} from "@chakra-ui/react";
+import {Button, ButtonGroup, Text} from "@chakra-ui/react";
+import {AiFillFileAdd} from "react-icons/ai";
+import {BsDatabaseAdd} from "react-icons/bs";
 
 export default function Layout() {
     const location = useLocation();
@@ -29,8 +31,8 @@ export default function Layout() {
                 <div className="w-[150px]">
                     <Button variant="ghost">
                         <div className="flex flex-row items-center">
-                            <InfoOutlineIcon color="gray.600" w={5} h={5}/>
-                            <span className="ml-2 text-[#4a5568] text-sm md:text-lg">About</span>
+                            <BsDatabaseAdd size={30} color={"#4a5568"}/>
+                            <span className="ml-2 text-[#4a5568] text-sm md:text-lg">Add Guide</span>
                         </div>
                     </Button>
                 </div>
@@ -38,9 +40,5 @@ export default function Layout() {
             {/*<div></div>*/}
         </div>
         <Outlet />
-        {/*THE FOOTER OF THE SITE*/}
-        <div className="h-[100px] bg-gray-200">
-
-        </div>
     </div>);
 }

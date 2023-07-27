@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.17",
     "@chakra-ui/icons": "^2.1.0",
     "@chakra-ui/react": "^2.8.0",
     "@emotion/react": "^11.11.1",
@@ -20,11 +21,15 @@
     "@mantine/hooks": "^6.0.17",
     "@mantine/modals": "^6.0.17",
     "@mantine/notifications": "^6.0.17",
+    "draft-js": "^0.11.7",
     "embla-carousel-react": "^7.1.0",
     "framer-motion": "^10.13.1",
+    "graphql": "^16.7.1",
     "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-quill": "^2.0.0",
     "react-router-dom": "^6.14.2",
     "sass": "^1.64.1"
   },

@@ -9,6 +9,15 @@ import Guides from './pages/guides/guides.jsx';
 import Layout from "./pages/layout.jsx";
 import {ChakraProvider, extendTheme} from "@chakra-ui/react";
 import RopeGuides from "./pages/guides/ropes/rope_guides.jsx";
+import RopeGuidePost from "./components/RopeGuidePost.jsx";
+
+import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+import AddNewGuide from "./pages/add_new_guide.jsx";
+
+const client = new ApolloClient({
+    uri: 'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clkkc0g5b1rf701uh65z9anvw/master',
+    cache: new InMemoryCache()
+});
 
 const router = createBrowserRouter([
     {
@@ -18,6 +27,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Index />
+            },
+            {
+                path: 'new',
+                element: <AddNewGuide />
             },
             {
                 path: 'history',
@@ -47,7 +60,13 @@ const router = createBrowserRouter([
                         element: <RopeGuides />
                     }, {
                         path: 'rope',
-                        element: <RopeGuides />
+                        element: <RopeGuides />,
+                        children: [
+                            {
+                                path: ':guideId',
+                                element: <RopeGuidePost />
+                            }
+                        ]
                     }, {
                         path: 'necktie',
                         element: <RopeGuides />
@@ -69,7 +88,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               }
           }
       })}>
-          <RouterProvider router={router} />
+          <ApolloProvider client={client}>
+              <RouterProvider router={router} />
+          </ApolloProvider>
       </ChakraProvider>
   </React.StrictMode>,
 )
