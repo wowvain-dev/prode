@@ -31,7 +31,8 @@ export default function Sidebar({items, title, children}) {
 
         <MobileNav display={{base: 'flex', md: 'none'}} onOpen={onOpen} items={items} title={title}/>
 
-        <Box ml={{base: 0, md: 60}} p="4">
+        <Box
+            ml={{base: 0, md: 60}} p="4">
             {children}
         </Box>
     </Box>
@@ -89,7 +90,7 @@ const NavItem = ({link, icon, children, ...rest}) => {
     );
 }
 
-const MobileNav = ({ onOpen, ...rest }) => {
+const MobileNav = ({ title, onOpen, ...rest }) => {
     return (
         <Flex
             ml={{ base: 0, md: 60}}
@@ -109,7 +110,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
             />
 
             <Text fontSize="2xl" ml="8" fontWeight="bold">
-                Logo
+                {title}
             </Text>
 
         </Flex>

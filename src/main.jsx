@@ -13,6 +13,10 @@ import RopeGuidePost from "./components/RopeGuidePost.jsx";
 
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
 import AddNewGuide from "./pages/add_new_guide.jsx";
+import NecktieGuides from "./pages/guides/neckties/necktie_guides.jsx";
+import NecktieGuidePost from "./components/NecktieGuidePost.jsx";
+import ShoelaceGuides from "./pages/guides/shoelaces/shoelace_guides.jsx";
+import ShoelaceGuidePost from "./components/ShoelaceGuidePost.jsx";
 
 const client = new ApolloClient({
     uri: 'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clkkc0g5b1rf701uh65z9anvw/master',
@@ -57,7 +61,13 @@ const router = createBrowserRouter([
                     },
                     {
                         path: 'shoelace',
-                        element: <RopeGuides />
+                        element: <ShoelaceGuides />,
+                        children: [
+                            {
+                                path: ':guideId',
+                                element: <ShoelaceGuidePost />
+                            }
+                        ]
                     }, {
                         path: 'rope',
                         element: <RopeGuides />,
@@ -69,7 +79,13 @@ const router = createBrowserRouter([
                         ]
                     }, {
                         path: 'necktie',
-                        element: <RopeGuides />
+                        element: <NecktieGuides />,
+                        children: [
+                            {
+                                path: ':guideId',
+                                element: <NecktieGuidePost />
+                            }
+                        ]
                     }
                 ]
             }

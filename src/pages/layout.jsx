@@ -29,7 +29,7 @@ export default function Layout() {
                     </ButtonGroup>
                 </div>
                 <div className="w-[150px]">
-                    <Button variant="ghost">
+                    <Button variant="ghost" onClick={()=>navigate('/new')}>
                         <div className="flex flex-row items-center">
                             <BsDatabaseAdd size={30} color={"#4a5568"}/>
                             <span className="ml-2 text-[#4a5568] text-sm md:text-lg">Add Guide</span>

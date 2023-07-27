@@ -1,14 +1,14 @@
 import {useParams} from "react-router-dom";
-import {GET_ROPE_GUIDE_ID} from "../utilities/queries.js";
+import {GET_NECKTIE_GUIDE_ID} from "../utilities/queries.js";
 import {useQuery} from "@apollo/client";
 import {Text} from "@chakra-ui/react";
 import {RichText} from "@graphcms/rich-text-react-renderer";
 
-export default function RopeGuidePost() {
+export default function NecktieGuidePost() {
     const params = useParams();
 
     const {loading, error, data} = useQuery(
-        GET_ROPE_GUIDE_ID, {
+        GET_NECKTIE_GUIDE_ID, {
             variables: {
                 "guide_id": params.guideId
             }
@@ -32,7 +32,7 @@ export default function RopeGuidePost() {
     return(
         <div>
             {/*<div dangerouslySetInnerHTML={{__html: data.ropeGuide.guideContent.html}}/>*/}
-            <RichText content={data.ropeGuide.guideContent.raw.children} />
+            <RichText content={data.necktieGuide.guideContent.raw.children} />
         </div>
     );
 }

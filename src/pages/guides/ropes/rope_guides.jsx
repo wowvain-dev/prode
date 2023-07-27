@@ -51,7 +51,6 @@ export default function RopeGuides() {
         </div>
     }
 
-
     const guides = data.ropeGuides;
     const links = new Array();
 
@@ -61,7 +60,7 @@ export default function RopeGuides() {
         links.push({
             link: "/guides/rope/" + val.id,
             name: val.guideTitle,
-            icon: <AddIcon />,
+            icon: <></>,
         })
     });
 
